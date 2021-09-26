@@ -7,7 +7,9 @@
 <body>
 <h2>Welcome to Plant Places</h2>
 <br/>
-Your specimen is: 
-<p th:text="${specimenDTO}">Static content</p>
+
+<p th:text="'Your specimen is: ' + ${specimenDTO.desc}">
+<p th:text="'ID: ' + ${specimenDTO.specimenID}">
+<p th:text="'Location: Latitude: ' + ${specimenDTO.lat} + ' Longitude: ' + ${specimenDTO.longit}">
 </body>
 </html>

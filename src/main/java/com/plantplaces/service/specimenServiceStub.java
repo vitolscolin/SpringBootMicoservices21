@@ -4,26 +4,23 @@ import org.springframework.stereotype.Component;
 
 import com.plantplaces.dto.SpecimenDTO;
 
-
 @Component
-public class specimenServiceStub  implements ISpecimenService{
+public class specimenServiceStub implements ISpecimenService {
 
+	@Override
+	public void save(SpecimenDTO specimentDTO) {
+		// TODO 
 
-@Override
-public void save(SpecimenDTO specimentDTO) {
-	// TODO Auto-generated method stub
-	
-}
+	}
 
-
-@Override
-public SpecimenDTO fetchBy(int id) {
-	SpecimenDTO specimenDTO = new SpecimenDTO();
-	specimenDTO.setSpecimenID(43);
-	specimenDTO.setLongit("40.75");
-			specimenDTO.setLat("60.65");
-			specimenDTO.setDesc("This is a plant");
-			return specimenDTO;
-}
+	@Override
+	public SpecimenDTO fetchBy(int id, String longit, String lat, String desc) {
+		SpecimenDTO specimenDTO = new SpecimenDTO();
+		specimenDTO.setSpecimenID(id);
+		specimenDTO.setLongit(longit);
+		specimenDTO.setLat(lat);
+		specimenDTO.setDesc(desc);
+		return specimenDTO;
+	}
 
 }

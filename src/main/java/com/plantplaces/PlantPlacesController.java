@@ -19,13 +19,13 @@ import com.plantplaces.service.ISpecimenService;
  */
 @Controller
 public class PlantPlacesController {
-	
+
 	@Autowired
 	private ISpecimenService specimenServiceStub;
 
 	@RequestMapping(value = "/start", method = RequestMethod.GET)
 	public String read(Model model) {
-		SpecimenDTO specimenDTO = specimenServiceStub.fetchBy(43);
+		SpecimenDTO specimenDTO = specimenServiceStub.fetchBy(43, "60.65", "40.75", "Fringe Flower");
 		model.addAttribute("specimenDTO", specimenDTO);
 		return "start";
 	}
@@ -37,19 +37,18 @@ public class PlantPlacesController {
 	 *
 	 */
 
-	@PostMapping("/start")
+	@PostMapping("/")
 	public String create() {
 
 		return "start";
 	}
 
-	@RequestMapping(value = "/start", method = RequestMethod.GET, params = {"loyalty=silver"})
+	@RequestMapping(value = "/start", method = RequestMethod.GET, params = { "loyalty=silver" })
 	public ModelAndView index() {
-		SpecimenDTO specimenDTO = specimenServiceStub.fetchBy(43);
-		specimenDTO.setSpecimenID(45);
+		SpecimenDTO specimenDTO = specimenServiceStub.fetchBy(45, "165.56", "20.89", "Pipevine");
 		ModelAndView modelview = new ModelAndView();
 		modelview.setViewName("start");
-		modelview.addObject("specimenDTO",specimenDTO);
+		modelview.addObject("specimenDTO", specimenDTO);
 		return modelview;
 	}
 }
