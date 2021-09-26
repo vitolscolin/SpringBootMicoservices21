@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Test</title>
+<title>PlantPlaces.Com</title>
 </head>
 <body>
 <h2>Welcome to Plant Places</h2>
+<br/>
+Your specimen is: 
+<p th:text="${specimenDTO}">Static content</p>
 </body>
 </html>
